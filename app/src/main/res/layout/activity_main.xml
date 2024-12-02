@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tiltle"
+
+        android:hint="Adaj meg a kony nevet"
+        android:textSize="20sp"
+        android:layout_marginBottom="10sp"
+        >
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/szerzoname"
+
+        android:hint="Adja meg a szerzo nevet"
+        android:textSize="20sp"
+        android:layout_marginBottom="10sp"
+        >
+
+    </EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/oldalszam"
+
+        android:hint="Adja meg hogy hány oldalas a konyv"
+        android:textSize="20sp"
+        android:inputType="number"
+        android:layout_marginBottom="10sp"
+        >
+
+    </EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addbutton"
+        android:text="hozzáad"
+        android:textSize="20sp"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"
+        android:descendantFocusability="blocksDescendants"
+        />
+
+</LinearLayout>
