@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     bo.add(new Book(name,szero,oldal));
                     book.notifyDataSetChanged();
                 }catch (Exception e){
-                    Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_LONG);
+                    Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
                 }
 
             }
