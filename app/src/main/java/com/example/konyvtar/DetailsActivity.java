@@ -37,8 +37,8 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent s=new Intent(DetailsActivity.this, MainActivity.class);
-                startActivity(s);
+
+
                finish();
             }
         });

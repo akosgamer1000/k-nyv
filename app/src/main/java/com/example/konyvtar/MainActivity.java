@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText oldalszam;
     Button add;
     ListView list;
-    List<Book> bo;
+     List<Book> bo;
     BookAdatter book;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +44,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    Integer oldal=0;
                     String name=tiltle.getText().toString();
-                    if(name==" ") throw new Exception("a név nem lehet üres");
+                    if(name.equals("")) throw new Exception("a név nem lehet üres");
 
                     String szero=szerzo.getText().toString();
-                    if(szero==" ") throw new Exception("a szerzö nem lehet üres ");
+                    if(szero.equals("")) throw new Exception("a szerzö nem lehet üres ");
+                    if(oldalszam.getText().toString().equals("")){
+                        throw new Exception("a lapszám nem lehet üres ");
+                    }
+                    else {
+                         oldal=Integer.parseInt(oldalszam.getText().toString());
+                    }
 
-                    Integer oldal=Integer.parseInt(oldalszam.getText().toString());
+
                     if(oldal<50)throw new Exception("nem lehet kevesebb mint 50 ");
                     bo.add(new Book(name,szero,oldal));
                     book.notifyDataSetChanged();
                 }catch (Exception e){
-                    Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -71,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 s.putExtra("szero",kiva.creator);
                 s.putExtra("page",kiva.laps);
                 startActivity(s);
+
             }
         });
 

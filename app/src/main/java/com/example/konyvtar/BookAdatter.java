@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,12 @@ public class BookAdatter  extends BaseAdapter {
         TextView  author=view.findViewById(R.id.szero_wiew);
         TextView  paeg=view.findViewById(R.id.lapszamwiew);
         Button delete=view.findViewById(R.id.delete);
+        Toast.makeText(con, ""+i, Toast.LENGTH_SHORT).show();
+        Book b=books.get(i);
+        System.out.printf(b.toString());
+        tiltle.setText(b.Tiltle);
+        author.setText(b.creator);
+        paeg.setText(String.valueOf( b.laps));
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +59,7 @@ public class BookAdatter  extends BaseAdapter {
                 builder.setMessage("biztosantörlik");
                 builder.setPositiveButton("igen", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                    public void onClick(DialogInterface dialogInterface, int which) {
                                 books.remove(i);
                                  notifyDataSetChanged();
                     }
@@ -62,11 +69,7 @@ public class BookAdatter  extends BaseAdapter {
                 dialog.show();
             }
         });
-        Book b=books.get(i);
-        System.out.printf(b.toString());
-        tiltle.setText(b.Tiltle);
-        author.setText(b.creator);
-        paeg.setText(String.valueOf( b.laps));
+
 
         return view;
     }
